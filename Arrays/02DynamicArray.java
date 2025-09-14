@@ -30,6 +30,12 @@ public class DynamicArray {
             newArr[i] = arr[i];
         }
         arr = newArr;
+/**
+ * Por que a linha acima eh tao importante?
+ * Resposta: Até esse ponto, todos os dados continuam em newArr, mas o campo arr da sua classe ainda está apontando para o array antigo, 
+ * que é pequeno! Se você não fizer arr = newArr;, todas as operações futuras (inserção, busca, etc.) continuarão acessando e modificando 
+ * o array antigo, que não tem espaço suficiente para novos elementos. Ou seja, o resize não teria efeito prático. 
+ * */        
     }  
 
     // Remove the last element in the array
